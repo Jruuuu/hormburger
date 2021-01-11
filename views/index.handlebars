@@ -37,11 +37,11 @@
         </div>
     </div>
 </div>
-<form class="create-form">
+<form class="create-form" action="/burgers/insertOne" method="POST">
 
     <div class="form-group mb-3">
-        <label for="newburger">Add Burger Here</label>
-        <input type="text" class="form-control" data-placeholder="" id="newBurger" name="newBurger" placeholder="Add Burger Here.."
+        <label for="newburger">Add Burger Here Refresh Page after input</label>
+        <input type="text" class="form-control" data-placeholder="" id="newBurger" name="burger_name" placeholder="Add Burger Here.."
             aria-label="Add Burger Here...." aria-describedby="button-addon2">
         <button class="btn btn-primary" type="submit" id="addburger">Submit</button>
     </div>
