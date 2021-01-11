@@ -1,3 +1,4 @@
+const { Router } = require("express");
 var express = require("express");
 
 var router = express.Router();
@@ -15,12 +16,13 @@ router.get("/", function (req, res) {
 });
 //inserts input into DB
 router.post("/api/burgers", function (req, res) {
-    burger.insterOne([
+    burger.insertOne([
         "burger_name", "devoured"
     ], [
         req.body.burger_name, req.body.devoured
     ], function (result) {
-        res.join({ id: result.insertId });
+        res.json({ id: result.insertId });
+        res.redirect("/");
     });
 });
 // changes devoured into false for DB
@@ -40,5 +42,18 @@ router.put("/api/burgers/:id", function (req, res) {
 
     });
 });
+
+
+// router.deleteOne(condition, function(req,res){
+//     var condition ="id = " + req.params.id;
+//     console.log("condition", condition);
+//     burger.deleteOne(condition,function(result){
+//         if((result.changeRows === 0)){
+//             return res.status(404).end();
+//         } else {
+//             res.status(200).end();
+//         }
+//     })
+// })
 
 module.exports = router;

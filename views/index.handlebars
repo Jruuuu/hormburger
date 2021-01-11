@@ -1,18 +1,48 @@
-<h1>hORMburger! LETS EAT!</h1>
-<img id="hormburger-img" src="../public/assets/img/hamburger-png-picture.png" alt="hambuger png">
+<h1 class="center">hORMburger! LETS EAT!</h1>
+<img id="hormburger-img" class="center" src="/assets/img/hamburger-png-picture.png" alt="hambuger png"></img>
 
-<ul>
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{>burgers/ devoured=false}}
-        {{/unless}}
-    {{/each}}
-</ul>
-
-<form class="create-form">
-        <div class ="form-group">
-            <label></label>
-            
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+        <div class="panel-heading" id="leftside"><b>Burgers Ordered</b></div>
+            <div class="panel-body">
+                <ul>
+                    {{#each burgers}}
+                    {{#unless this.devoured}}
+                    <li> {{this.burger_name}}</li>
+                    <button type="button" class="consumeBurger btn btn-primary" id="consumebtn" data-id="{{this.id}}"
+                        data-newDevoured="{{devour}}">devour</button>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
         </div>
+    </div>
 
+    {{!-- this is the container for devoured burgers --}}
+
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading" id="rightside"><b>Burgers Devoured</b></div>
+            <div class="panel-body">
+                <ul>
+                    {{#each burgers}}
+                    {{#if this.devoured}}
+                    <li> {{this.burger_name}}</li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<form class="create-form">
+
+    <div class="form-group mb-3">
+        <label for="newburger">Add Burger Here</label>
+        <input type="text" class="form-control" data-placeholder="" id="newBurger" name="newBurger" placeholder="Add Burger Here.."
+            aria-label="Add Burger Here...." aria-describedby="button-addon2">
+        <button class="btn btn-primary" type="submit" id="addburger">Submit</button>
+    </div>
 </form>

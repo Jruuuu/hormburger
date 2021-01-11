@@ -38,6 +38,7 @@ var orm = {
             if (err) {
                 throw err;
             }
+            console.log("*******orm selectall:",result);
             cb(result)
         });
     },
@@ -61,7 +62,7 @@ var orm = {
     },
 
     updateOne: function (table, objColVals, condition, cb) {
-        var queryString = "UPDATE " = table;
+        var queryString = "UPDATE " + table;
 
         queryString += " SET ";
         queryString += objToSql(objColVals);
@@ -77,6 +78,20 @@ var orm = {
             cb(result);
         });
 
-    }
+    },
+
+    // deleteOne: function (table, condition, cb) {
+    //     var queryString = "DELETE FROM " + table + "WHERE " + condition;
+    //     console.log(queryString);
+    //     connection.query(queryString, function (err, result) {
+    //         if (err) {
+    //             throw err;
+    //         }
+
+    //         cb(result);
+    //     });
+
+    // }
+
 };
 module.exports = orm;
