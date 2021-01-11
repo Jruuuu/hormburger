@@ -21,8 +21,9 @@ router.post("/api/burgers", function (req, res) {
     ], [
         req.body.burger_name, req.body.devoured
     ], function (result) {
-        res.json({ id: result.insertId });
-        // res.redirect("/");
+        console.log(result)
+        // res.json({ id: result.insertId });
+        res.redirect("/");
     });
 });
 // changes devoured into false for DB
