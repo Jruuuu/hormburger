@@ -58,6 +58,7 @@ THE SOFTWARE.
 &copy; Git Hub User Name: Jruuuu
 
 <a href="https://github.com/Jruuuu/hormburger">***Finish Product: HORMBURGER GITHUB REPO***</a>
+
 <a href="https://shrouded-mesa-69348.herokuapp.com/">***Finish Product: HORMBURGER APP(CURRENTLY DOWN) TROUBLESHOOTING HEROKU***</a>
 
 ## Example of what the end result should look like <a name="example"></a>
