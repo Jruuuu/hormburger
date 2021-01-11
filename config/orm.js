@@ -38,7 +38,6 @@ var orm = {
             if (err) {
                 throw err;
             }
-            console.log("*******orm selectall:",result);
             cb(result)
         });
     },

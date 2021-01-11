@@ -22,7 +22,7 @@ router.post("/api/burgers", function (req, res) {
         req.body.burger_name, req.body.devoured
     ], function (result) {
         res.json({ id: result.insertId });
-        res.redirect("/");
+        // res.redirect("/");
     });
 });
 // changes devoured into false for DB
@@ -42,7 +42,6 @@ router.put("/api/burgers/:id", function (req, res) {
 
     });
 });
-
 
 // router.deleteOne(condition, function(req,res){
 //     var condition ="id = " + req.params.id;
